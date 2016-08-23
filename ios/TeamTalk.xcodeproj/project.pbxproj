@@ -43,8 +43,6 @@
 		8157DB831B47DED800043E0F /* chatBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8157DB821B47DED800043E0F /* chatBg.png */; };
 		8170B6911B3934320011E0D0 /* MTTSignatureAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8170B6901B3934320011E0D0 /* MTTSignatureAPI.m */; };
 		8176F8101B462B39004E4775 /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F80F1B462B39004E4775 /* UIImage+Rotate_Flip.m */; };
-		817CB3B01B3BC6E80004AFEA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817CB3AE1B3BC6E80004AFEA /* Fabric.framework */; };
-		817CB3B11B3BC6E80004AFEA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817CB3AF1B3BC6E80004AFEA /* Crashlytics.framework */; };
 		817CB3B41B3C04940004AFEA /* MTTGroupInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 817CB3B31B3C04940004AFEA /* MTTGroupInfoCell.m */; };
 		818654921B3424E3006AFD8F /* MTTUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 818654911B3424E3006AFD8F /* MTTUserInfoCell.m */; };
 		818BB5771B43DB1B0023AAE2 /* MTTAvatarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 818BB5761B43DB1B0023AAE2 /* MTTAvatarManager.m */; };
@@ -1080,9 +1078,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0AE3A1B1B32C95A00B67232 /* libz.dylib in Frameworks */,
-				817CB3B01B3BC6E80004AFEA /* Fabric.framework in Frameworks */,
 				C054EC851B3274E200078809 /* libsecurity.a in Frameworks */,
-				817CB3B11B3BC6E80004AFEA /* Crashlytics.framework in Frameworks */,
 				0B300CD9CFE62CED72EDDD70 /* libPods-TeamTalk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2507,11 +2503,9 @@
 			buildConfigurationList = C054EC521B3270D900078809 /* Build configuration list for PBXNativeTarget "TeamTalk" */;
 			buildPhases = (
 				D103B33D788ABB7FFBA050CA /* [CP] Check Pods Manifest.lock */,
-				468A16201B3937150093C314 /* ShellScript */,
 				C054EC2B1B3270D900078809 /* Sources */,
 				C054EC2C1B3270D900078809 /* Frameworks */,
 				C054EC2D1B3270D900078809 /* Resources */,
-				817CB3AD1B3BC68D0004AFEA /* Run Script */,
 				9400453A42EA7042BE91199A /* [CP] Embed Pods Frameworks */,
 				EBBEBE94A0E1A6568D99C9A1 /* [CP] Copy Pods Resources */,
 			);
@@ -2752,33 +2746,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		468A16201B3937150093C314 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ] || [ \"${CONFIGURATION}\" = \"CI\" ]; then\n\nBUILD_NUMBER=`curl http://www.mogujie.com/mobile/build/increase -F \"identifier=im.teamtalk.tt\" -F \"sign=f41b3c980d33d9d51a0a0df685b20bb9\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILD_NUMBER\" \"${INFOPLIST_FILE}\"\nfi";
-		};
-		817CB3AD1B3BC68D0004AFEA /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run c85ad901eb0173a488b631e90f5913415f7424d1 bcd847cf6b15b2605cfff9400a4da335ce5ea3a0ac481dd143db404b55a09e73";
-		};
 		9400453A42EA7042BE91199A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

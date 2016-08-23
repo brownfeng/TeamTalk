@@ -51,7 +51,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     MTTLoginViewController *loginVC =[[MTTLoginViewController alloc] initWithNibName:@"MTTLoginViewController" bundle:nil];
-    UINavigationController *navRoot =[[UINavigationController alloc] initWithRootViewController:loginVC];
+    ChattingMainViewController *chatting = [ChattingMainViewController shareInstance];
+
+    UINavigationController *navRoot =[[UINavigationController alloc] initWithRootViewController:chatting];
     navRoot.hidesBottomBarWhenPushed =YES;
     self.window.rootViewController =navRoot;
     
